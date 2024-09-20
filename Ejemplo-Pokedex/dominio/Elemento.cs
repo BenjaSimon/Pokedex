@@ -8,6 +8,7 @@ namespace dominio
 {
     public class Elemento
     {
+        // Esto no...
         public int Id { get; set; }
 
         public string Descripcion { get; set; }
@@ -15,6 +16,7 @@ namespace dominio
         public override string ToString()
         {
             return Descripcion;
+            //Estpo si...
         }
     }
 }
