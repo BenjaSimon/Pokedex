@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frmPokedex", "Pokedex\frmPokedex.csproj", "{1A62A479-4324-40EC-ABE2-C8A1D53B8CE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.csproj", "{C7D3356D-4A2A-4F62-BCE1-FE44D081273C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{7C5D3DA2-9CA8-4D83-A9B9-644B886D056F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A62A479-4324-40EC-ABE2-C8A1D53B8CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A62A479-4324-40EC-ABE2-C8A1D53B8CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A62A479-4324-40EC-ABE2-C8A1D53B8CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A62A479-4324-40EC-ABE2-C8A1D53B8CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7D3356D-4A2A-4F62-BCE1-FE44D081273C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D3356D-4A2A-4F62-BCE1-FE44D081273C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D3356D-4A2A-4F62-BCE1-FE44D081273C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D3356D-4A2A-4F62-BCE1-FE44D081273C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C5D3DA2-9CA8-4D83-A9B9-644B886D056F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C5D3DA2-9CA8-4D83-A9B9-644B886D056F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C5D3DA2-9CA8-4D83-A9B9-644B886D056F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C5D3DA2-9CA8-4D83-A9B9-644B886D056F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44A4F67A-1999-487F-A4D1-D109EAA2CC20}
+	EndGlobalSection
+EndGlobal
