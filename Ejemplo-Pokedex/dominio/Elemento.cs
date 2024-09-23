@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace dominio
 {
+    
     public class Elemento
     {
-        // Esto no...
         public int Id { get; set; }
-
+        
         public string Descripcion { get; set; }
 
         public override string ToString()
         {
             return Descripcion;
-            //Estpo si...
+            
         }
     }
 }

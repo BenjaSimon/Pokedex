@@ -50,10 +50,27 @@ namespace Negocio
                 throw;
             }
         }
-      
-        
-        
-        
 
+        public void agregar(Pokemon nuevo)
+        {
+                   
+                AccesoDatos datos = new AccesoDatos();
+            datos.Setearconsulta("insert into POKEMONS (Numero, Nombre, Descripcion, Activo)values(" + nuevo.Numero+ " , '" + nuevo.Nombre +"', '" + nuevo.Descripcion +"', 1)");
+            datos.Ejecutaraccion();
+            try
+            {
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.Cerrarconexion();
+            }
+        }
+      
     }
+   
 }

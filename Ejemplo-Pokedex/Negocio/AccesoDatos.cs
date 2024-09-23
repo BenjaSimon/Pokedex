@@ -16,27 +16,25 @@ namespace Negocio
         {
             get { return lector; }
         }
+
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=POKEDEX_DB; integrated security=true;");
+            conexion = new SqlConnection("server =.\\SQLEXPRESS; database = POKEDEX_DB; integrated security = true;");
             comando = new SqlCommand();
         }
-
         public void Setearconsulta(string consulta)
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
         }
-
-
-
-        public void Ejecutarlectura()
+        public void EjecutarLectura()
         {
             comando.Connection = conexion;
             try
             {
                 conexion.Open();
                 lector = comando.ExecuteReader();
+
             }
             catch (Exception ex)
             {
@@ -45,17 +43,31 @@ namespace Negocio
             }
 
         }
-        public void CerrarConexion()
+        public void Ejecutaraccion()
         {
-            if(lector != null)
-            
-                lector.Close();
-                conexion.Close(); 
-            
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+        }
+        public void Cerrarconexion()
+        {
+            if (lector != null)
+            {
+                lector.Close(); 
+                conexion.Close();
+            }
         }
 
-    
+
+
     }
 
 

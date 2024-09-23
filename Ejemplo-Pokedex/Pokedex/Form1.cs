@@ -15,6 +15,7 @@ namespace Pokedex
     public partial class Pokedex : Form
     {
         private List<Pokemon> listaPokemon;
+        private List<Elemento> listaelementos;
         public Pokedex()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace Pokedex
             dgvPokemons.DataSource = listaPokemon;
             dgvPokemons.Columns["UrlImagen"].Visible = false;
             cargarimagen(listaPokemon[0].UrlImagen);
+            
         }
 
         private void dgvPokemons_SelectionChanged(object sender, EventArgs e)
@@ -46,6 +48,12 @@ namespace Pokedex
 
                 pbPokemon.Load("https://cdn3.iconfinder.com/data/icons/web-development-and-programming-2/64/development_Not_Found-1024.png");
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaPokemon alta = new frmAltaPokemon();
+            alta.ShowDialog();
         }
     }
 }
