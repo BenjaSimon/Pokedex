@@ -14,9 +14,16 @@ namespace Pokedex
 {
     public partial class frmAltaPokemon : Form
     {
+        private Pokemon pokemon = null;
         public frmAltaPokemon()
         {
             InitializeComponent();
+        }
+        public frmAltaPokemon(Pokemon pokemon)
+        {
+            InitializeComponent();
+            this.pokemon = pokemon;
+            Text = "Modificar Pokemon";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -26,16 +33,17 @@ namespace Pokedex
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Pokemon poke = new Pokemon();
+            
             PokemonNegocio negocio = new PokemonNegocio();
             try
             {
-                poke.Numero = int.Parse(txtNumero.Text);
-                poke.Nombre = txtNombre.Text;
-                poke.Descripcion = txtDescipcion.Text;
-                poke.Tipo = (Elemento)cboTipo.SelectedItem;
-                poke.Debilidad = (Elemento)cboDebilidad.SelectedItem;
-                negocio.agregar(poke);
+                pokemon.Numero = int.Parse(txtNumero.Text);
+                pokemon.Nombre = txtNombre.Text;
+                pokemon.Descripcion = txtDescipcion.Text;
+                pokemon.Tipo = (Elemento)cboTipo.SelectedItem;
+                pokemon.Debilidad = (Elemento)cboDebilidad.SelectedItem;
+                pokemon.UrlImagen = txtUrl.Text;
+                negocio.agregar(pokemon);
                 MessageBox.Show("Agregado exitoso");
                 Close();
 
@@ -54,12 +62,47 @@ namespace Pokedex
             try
             {
                 cboTipo.DataSource = negocioelemento.listar();
+                cboTipo.ValueMember = "Id";
+                cboTipo.DisplayMember = "Descripcion";
                 cboDebilidad.DataSource = negocioelemento.listar();
+                cboDebilidad.ValueMember = "Id";
+                cboDebilidad.DisplayMember = "Descripcion";
+
+                if (pokemon != null)
+                {
+                    txtNumero.Text = pokemon.Numero.ToString();
+                    txtNombre.Text = pokemon.Nombre;
+                    txtDescipcion.Text = pokemon.Descripcion;
+                    txtUrl.Text = pokemon.UrlImagen;
+                    cargarimagen(pokemon.UrlImagen);
+                    cboTipo.SelectedValue = pokemon.Tipo.Id;
+                    cboDebilidad.SelectedValue = pokemon.Debilidad.Id;
+                }
             }
             catch (Exception ex)
             {
 
                 throw ex;
+            }
+        }
+
+        private void txtUrl_Leave(object sender, EventArgs e)
+        {
+            cargarimagen(txtUrl.Text);
+        }
+
+
+        private void cargarimagen(string imagen)
+        {
+            try
+            {
+                pbPokemon.Load(imagen);
+
+            }
+            catch (Exception)
+            {
+
+                pbPokemon.Load("https://cdn3.iconfinder.com/data/icons/web-development-and-programming-2/64/development_Not_Found-1024.png");
             }
         }
     }
