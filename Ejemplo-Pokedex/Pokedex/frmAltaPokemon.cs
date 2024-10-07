@@ -37,15 +37,29 @@ namespace Pokedex
             PokemonNegocio negocio = new PokemonNegocio();
             try
             {
+                if(pokemon == null)
+                    pokemon = new Pokemon(); 
+                
                 pokemon.Numero = int.Parse(txtNumero.Text);
                 pokemon.Nombre = txtNombre.Text;
                 pokemon.Descripcion = txtDescipcion.Text;
                 pokemon.Tipo = (Elemento)cboTipo.SelectedItem;
                 pokemon.Debilidad = (Elemento)cboDebilidad.SelectedItem;
                 pokemon.UrlImagen = txtUrl.Text;
-                negocio.agregar(pokemon);
-                MessageBox.Show("Agregado exitoso");
-                Close();
+
+                if (pokemon.Id != 0)
+                {
+                     negocio.modificar(pokemon);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                    negocio.agregar(pokemon);
+                    MessageBox.Show("Agregado exitoso");
+
+                }
+
+                    Close();
 
             }
             catch (Exception ex)

@@ -32,6 +32,7 @@
             this.pbPokemon = new System.Windows.Forms.PictureBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminarfisico = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPokemon)).BeginInit();
             this.SuspendLayout();
@@ -81,11 +82,22 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // btnEliminarfisico
+            // 
+            this.btnEliminarfisico.Location = new System.Drawing.Point(264, 221);
+            this.btnEliminarfisico.Name = "btnEliminarfisico";
+            this.btnEliminarfisico.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarfisico.TabIndex = 4;
+            this.btnEliminarfisico.Text = "Eliminar";
+            this.btnEliminarfisico.UseVisualStyleBackColor = true;
+            this.btnEliminarfisico.Click += new System.EventHandler(this.btnEliminarfisico_Click);
+            // 
             // Pokedex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 279);
+            this.Controls.Add(this.btnEliminarfisico);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pbPokemon);
@@ -107,6 +119,7 @@
         private System.Windows.Forms.PictureBox pbPokemon;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminarfisico;
     }
 }
 
