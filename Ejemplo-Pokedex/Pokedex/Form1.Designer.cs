@@ -33,6 +33,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminarfisico = new System.Windows.Forms.Button();
+            this.btnEliminarlogico = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPokemon)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +85,7 @@
             // 
             // btnEliminarfisico
             // 
-            this.btnEliminarfisico.Location = new System.Drawing.Point(264, 221);
+            this.btnEliminarfisico.Location = new System.Drawing.Point(263, 221);
             this.btnEliminarfisico.Name = "btnEliminarfisico";
             this.btnEliminarfisico.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarfisico.TabIndex = 4;
@@ -92,11 +93,22 @@
             this.btnEliminarfisico.UseVisualStyleBackColor = true;
             this.btnEliminarfisico.Click += new System.EventHandler(this.btnEliminarfisico_Click);
             // 
+            // btnEliminarlogico
+            // 
+            this.btnEliminarlogico.Location = new System.Drawing.Point(386, 221);
+            this.btnEliminarlogico.Name = "btnEliminarlogico";
+            this.btnEliminarlogico.Size = new System.Drawing.Size(82, 23);
+            this.btnEliminarlogico.TabIndex = 5;
+            this.btnEliminarlogico.Text = "Eliminar logico";
+            this.btnEliminarlogico.UseVisualStyleBackColor = true;
+            this.btnEliminarlogico.Click += new System.EventHandler(this.btnEliminarlogico_Click);
+            // 
             // Pokedex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 279);
+            this.Controls.Add(this.btnEliminarlogico);
             this.Controls.Add(this.btnEliminarfisico);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -120,6 +132,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminarfisico;
+        private System.Windows.Forms.Button btnEliminarlogico;
     }
 }
 
