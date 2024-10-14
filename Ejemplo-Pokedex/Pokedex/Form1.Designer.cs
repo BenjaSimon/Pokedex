@@ -34,6 +34,9 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminarfisico = new System.Windows.Forms.Button();
             this.btnEliminarlogico = new System.Windows.Forms.Button();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.btnFiltro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPokemon)).BeginInit();
             this.SuspendLayout();
@@ -46,26 +49,26 @@
             this.dgvPokemons.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPokemons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPokemons.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvPokemons.Location = new System.Drawing.Point(35, 32);
+            this.dgvPokemons.Location = new System.Drawing.Point(35, 37);
             this.dgvPokemons.MultiSelect = false;
             this.dgvPokemons.Name = "dgvPokemons";
             this.dgvPokemons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPokemons.Size = new System.Drawing.Size(553, 157);
+            this.dgvPokemons.Size = new System.Drawing.Size(553, 180);
             this.dgvPokemons.TabIndex = 0;
             this.dgvPokemons.SelectionChanged += new System.EventHandler(this.dgvPokemons_SelectionChanged);
             // 
             // pbPokemon
             // 
-            this.pbPokemon.Location = new System.Drawing.Point(610, 32);
+            this.pbPokemon.Location = new System.Drawing.Point(594, 37);
             this.pbPokemon.Name = "pbPokemon";
-            this.pbPokemon.Size = new System.Drawing.Size(192, 157);
+            this.pbPokemon.Size = new System.Drawing.Size(198, 180);
             this.pbPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPokemon.TabIndex = 1;
             this.pbPokemon.TabStop = false;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(35, 221);
+            this.btnAgregar.Location = new System.Drawing.Point(35, 234);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 2;
@@ -75,7 +78,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(149, 220);
+            this.btnModificar.Location = new System.Drawing.Point(145, 234);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 3;
@@ -85,7 +88,7 @@
             // 
             // btnEliminarfisico
             // 
-            this.btnEliminarfisico.Location = new System.Drawing.Point(263, 221);
+            this.btnEliminarfisico.Location = new System.Drawing.Point(260, 234);
             this.btnEliminarfisico.Name = "btnEliminarfisico";
             this.btnEliminarfisico.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarfisico.TabIndex = 4;
@@ -95,7 +98,7 @@
             // 
             // btnEliminarlogico
             // 
-            this.btnEliminarlogico.Location = new System.Drawing.Point(386, 221);
+            this.btnEliminarlogico.Location = new System.Drawing.Point(372, 234);
             this.btnEliminarlogico.Name = "btnEliminarlogico";
             this.btnEliminarlogico.Size = new System.Drawing.Size(82, 23);
             this.btnEliminarlogico.TabIndex = 5;
@@ -103,11 +106,40 @@
             this.btnEliminarlogico.UseVisualStyleBackColor = true;
             this.btnEliminarlogico.Click += new System.EventHandler(this.btnEliminarlogico_Click);
             // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(32, 13);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(29, 13);
+            this.lblFiltro.TabIndex = 6;
+            this.lblFiltro.Text = "Filtro";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(76, 10);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(121, 20);
+            this.txtFiltro.TabIndex = 7;
+            // 
+            // btnFiltro
+            // 
+            this.btnFiltro.Location = new System.Drawing.Point(203, 8);
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltro.TabIndex = 8;
+            this.btnFiltro.Text = "Buscar";
+            this.btnFiltro.UseVisualStyleBackColor = true;
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            // 
             // Pokedex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 279);
+            this.ClientSize = new System.Drawing.Size(897, 271);
+            this.Controls.Add(this.btnFiltro);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.btnEliminarlogico);
             this.Controls.Add(this.btnEliminarfisico);
             this.Controls.Add(this.btnModificar);
@@ -122,6 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPokemon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -133,6 +166,9 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminarfisico;
         private System.Windows.Forms.Button btnEliminarlogico;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button btnFiltro;
     }
 }
 

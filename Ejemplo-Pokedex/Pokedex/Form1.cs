@@ -33,8 +33,7 @@ namespace Pokedex
             {
                 listaPokemon = negocio.listar();
                 dgvPokemons.DataSource = listaPokemon;
-                dgvPokemons.Columns["UrlImagen"].Visible = false;
-                dgvPokemons.Columns["Id"].Visible = false;
+                ocultarColumnas();
                 cargarimagen(listaPokemon[0].UrlImagen);
             }
             catch (Exception ex)
@@ -43,11 +42,19 @@ namespace Pokedex
                 MessageBox.Show(ex.ToString());
             }
         }
+        private void ocultarColumnas()
+        {
+            dgvPokemons.Columns["UrlImagen"].Visible = false;
+            dgvPokemons.Columns["Id"].Visible = false;
+        }
 
         private void dgvPokemons_SelectionChanged(object sender, EventArgs e)
         {
+            if(dgvPokemons.CurrentRow != null)
+            {
             Pokemon seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
             cargarimagen(seleccionado.UrlImagen);
+            }
         }
         private void cargarimagen(string imagen)
         {
@@ -114,6 +121,26 @@ namespace Pokedex
                 MessageBox.Show(ex.ToString());
             }
         }
-        
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            List<Pokemon> listaFiltrada;
+            
+
+            string filtro = txtFiltro.Text;
+            if (filtro != "")
+            {
+                listaFiltrada = listaPokemon.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Tipo.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaPokemon;
+            }
+
+
+            dgvPokemons.DataSource = null;
+            dgvPokemons.DataSource = listaFiltrada;
+            ocultarColumnas();
+        }
     }
 }
