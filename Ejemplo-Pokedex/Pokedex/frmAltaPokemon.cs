@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using Negocio;
+using System.Configuration;
 
 namespace Pokedex
 {
     public partial class frmAltaPokemon : Form
     {
         private Pokemon pokemon = null;
+        private OpenFileDialog archivo = null; 
         public frmAltaPokemon()
         {
             InitializeComponent();
@@ -59,7 +62,13 @@ namespace Pokedex
 
                 }
 
-                    Close();
+                if(archivo != null && !(txtUrl.Text.Contains("http")))
+                
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
+
+                
+
+                Close();
 
             }
             catch (Exception ex)
@@ -117,6 +126,23 @@ namespace Pokedex
             {
 
                 pbPokemon.Load("https://cdn3.iconfinder.com/data/icons/web-development-and-programming-2/64/development_Not_Found-1024.png");
+            }
+        }
+
+        private void btnAgregarImg_Click(object sender, EventArgs e)
+        {
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg |*.jpg;|png| *png";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrl.Text = archivo.FileName;
+                cargarimagen(archivo.FileName);
+
+                //GUARDAR IMAGEN
+
+                //File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images-folder"] + archivo.SafeFileName);
+
+
             }
         }
     }

@@ -44,6 +44,7 @@
             this.pbPokemon = new System.Windows.Forms.PictureBox();
             this.lblUrlimagen = new System.Windows.Forms.Label();
             this.txtUrl = new System.Windows.Forms.TextBox();
+            this.btnAgregarImg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPokemon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,7 +171,7 @@
             // lblUrlimagen
             // 
             this.lblUrlimagen.AutoSize = true;
-            this.lblUrlimagen.Location = new System.Drawing.Point(331, 22);
+            this.lblUrlimagen.Location = new System.Drawing.Point(331, 18);
             this.lblUrlimagen.Name = "lblUrlimagen";
             this.lblUrlimagen.Size = new System.Drawing.Size(58, 13);
             this.lblUrlimagen.TabIndex = 13;
@@ -178,11 +179,21 @@
             // 
             // txtUrl
             // 
-            this.txtUrl.Location = new System.Drawing.Point(405, 15);
+            this.txtUrl.Location = new System.Drawing.Point(395, 15);
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(123, 20);
             this.txtUrl.TabIndex = 5;
             this.txtUrl.Leave += new System.EventHandler(this.txtUrl_Leave);
+            // 
+            // btnAgregarImg
+            // 
+            this.btnAgregarImg.Location = new System.Drawing.Point(524, 13);
+            this.btnAgregarImg.Name = "btnAgregarImg";
+            this.btnAgregarImg.Size = new System.Drawing.Size(27, 23);
+            this.btnAgregarImg.TabIndex = 14;
+            this.btnAgregarImg.Text = "+";
+            this.btnAgregarImg.UseVisualStyleBackColor = true;
+            this.btnAgregarImg.Click += new System.EventHandler(this.btnAgregarImg_Click);
             // 
             // frmAltaPokemon
             // 
@@ -191,6 +202,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(556, 411);
+            this.Controls.Add(this.btnAgregarImg);
             this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.lblUrlimagen);
             this.Controls.Add(this.pbPokemon);
@@ -235,5 +247,6 @@
         private System.Windows.Forms.PictureBox pbPokemon;
         private System.Windows.Forms.Label lblUrlimagen;
         private System.Windows.Forms.TextBox txtUrl;
+        private System.Windows.Forms.Button btnAgregarImg;
     }
 }
