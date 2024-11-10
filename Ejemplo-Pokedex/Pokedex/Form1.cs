@@ -141,6 +141,11 @@ namespace Pokedex
             }
             if (cboCampo.SelectedItem.ToString() == "Numero")
             {
+                if (string.IsNullOrEmpty(txtFiltroAvanzado.Text))
+                {
+                    MessageBox.Show("Ingresar un numero para filtrar");
+                    return true;
+                }
                 if (!(validarNumero(txtFiltroAvanzado.Text)))
                 {
                     MessageBox.Show("INGRESE SOLO NÚMEROS POR FAVOR");
