@@ -82,6 +82,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(100, 20);
             this.txtNumero.TabIndex = 0;
+            
             // 
             // txtDescipcion
             // 

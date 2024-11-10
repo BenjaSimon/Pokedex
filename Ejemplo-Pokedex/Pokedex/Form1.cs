@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -125,11 +126,53 @@ namespace Pokedex
             }
         }
 
+        private bool validarFiltro()
+        {
+            if(cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un CAMPO para continuar");
+            return true;
+
+            }
+            if (cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un CRITERIO para continuar");
+                return true;
+            }
+            if (cboCampo.SelectedItem.ToString() == "Numero")
+            {
+                if (!(validarNumero(txtFiltroAvanzado.Text)))
+                {
+                    MessageBox.Show("INGRESE SOLO NÚMEROS POR FAVOR");
+                    return true;
+                }
+
+            }
+            
+            return false;
+        }
+        private bool validarNumero(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                {
+                    return false;
+                }
+            }
+            return true;
+
+        }
         private void btnFiltro_Click(object sender, EventArgs e)
         {
             PokemonNegocio negocio = new PokemonNegocio();
+            
+
             try
             {
+                if (validarFiltro())
+                    return;
+           
             string campo = cboCampo.SelectedItem.ToString();
             string criterio = cboCriterio.SelectedItem.ToString();
             string filtro = txtFiltroAvanzado.Text;
